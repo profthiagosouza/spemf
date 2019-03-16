@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/prjSpemf2/src"
+    modelPluginID="prjSpemf2" modelName="Spem2" importerID="org.eclipse.emf.importer.rose">
+  <foreignModel>D:\Meus documentos\Informática\Mestrado\Seminário Tecnológico\EMF\spem2.mdl</foreignModel>
+  <genPackages prefix="Spem2" disposableProviderFactory="true" ecorePackage="spem2.ecore#/">
+    <genClasses ecoreClass="spem2.ecore#//WorkProduct">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//WorkProduct/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//WorkProduct/isDeliverable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//WorkProduct/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkProduct/responsible"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference spem2.ecore#//WorkProduct/responsibleRoles"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference spem2.ecore#//WorkProduct/Process"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//ProcessPerformer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//ProcessPerformer/work"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//ProcessRole">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//ProcessRole/name"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference spem2.ecore#//ProcessRole/workProducts"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference spem2.ecore#//ProcessRole/activities"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference spem2.ecore#//ProcessRole/Process"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//ActionState"/>
+    <genClasses ecoreClass="spem2.ecore#//Step">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//Step/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference spem2.ecore#//Step/activities"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//Activity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//Activity/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//Activity/assistant"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//Activity/step"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//Activity/steps"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference spem2.ecore#//Activity/assistants"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference spem2.ecore#//Activity/Process"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//WorkDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkDefinition/performer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkDefinition/parentWork"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//Process">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//Process/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//Process/Activity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//Process/ProcessRole"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//Process/WorkProduct"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
